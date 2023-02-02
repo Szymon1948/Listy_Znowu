@@ -17,6 +17,20 @@
         android:id="@+id/listaViewKategorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/kategoria"/>
+        android:entries="@array/kategoria">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ListaDynamiczna" />
+
+    <ListView
+        android:id="@+id/listViewDynamicznie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>

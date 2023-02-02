@@ -8,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +22,24 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String kategoria =
+                String kategoria = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(MainActivity.this, kategoria, Toast.LENGTH_LONG).show();
             }
-        }
-        //ArrayAdapter<String> kategorie = new ArrayAdapter<>();
+        };
+        listView.setOnItemClickListener(clickListener);
+
+        ArrayList<String> slowa = new ArrayList<>();
+        slowa.add("Podlać kwiaty");
+        slowa.add("Wyprowadzić Psa");
+        slowa.add("Wyczesać Psa");
+        slowa.add("Schować Zmywarke");
+
+        ArrayAdapter<String> slowaAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                slowa
+        );
+        ListView listView2 = findViewById(R.id.listViewDynamicznie);
+        listView2.setAdapter(slowaAdapter);
     }
 }
