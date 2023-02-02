@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -41,5 +43,18 @@ public class MainActivity extends AppCompatActivity {
         );
         ListView listView2 = findViewById(R.id.listViewDynamicznie);
         listView2.setAdapter(slowaAdapter);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        EditText editText = findViewById(R.id.editText);
+                        String wpisanyTekst = editText.getText().toString();
+                        slowa.add(wpisanyTekst);
+                        slowaAdapter.notifyDataSetChanged();
+                    }
+                }
+        );
     }
 }
