@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Listy_Znowu</string>
+    <string-array name="kategoria">
+        <item>napoje</item>
+        <item>desery</item>
+        <item>ciasta</item>
+        <item>ciasteczka</item>
+    </string-array>
 </resources>
