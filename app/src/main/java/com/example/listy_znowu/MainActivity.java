@@ -56,5 +56,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        AdapterView.OnItemClickListener kliknieteSlowo = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this,slowa.get(i),Toast.LENGTH_SHORT).show();
+                slowa.remove(i);
+                slowaAdapter.notifyDataSetChanged();
+            }
+        };
+        listView2.setOnItemClickListener(kliknieteSlowo);
+
     }
 }
